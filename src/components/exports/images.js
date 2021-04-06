@@ -1,0 +1,69 @@
+
+
+const bgImg = require("../assets/images/frontBG.jpg");
+
+const plate = require("../assets/images/plate.png");
+
+const homepage = require("../assets/images/homepage.jpg");
+
+// 
+const restaurent1 = require("../assets/images/restaurent1.png");
+const restaurent2 = require("../assets/images/restaurent2.jpg");
+const restaurent3 = require("../assets/images/restaurent3.jpg");
+const restaurent4 = require("../assets/images/restaurent4.jpg");
+const restaurent5 = require("../assets/images/restaurent5.jpg");
+const restaurent6 = require("../assets/images/restaurent6.jpg");
+const restaurent7 = require("../assets/images/restaurent7.jpg");
+
+
+
+
+// const audi = require("../assets/images/audi.jpg");
+// const bmw = require("../assets/images/bmw.jpg");
+// const rollsRoyce = require("../assets/images/rollsRoyce.jpg");
+// const benz = require("../assets/images/benz.jpg");
+
+// const car = require("../assets/images/car-top1.png");
+
+// const service = require("../assets/images/service.png");
+// const service1 = require("../assets/images/service1.png");
+// const service2 = require("../assets/images/service2.png");
+
+
+
+
+export default {
+    bgImg,
+    plate,
+
+    homepage,
+
+    restaurent1,
+    restaurent2,
+    restaurent3,
+    restaurent4,
+    restaurent5,
+    restaurent6,
+    restaurent7,
+
+    // profile_1,
+    // profile_2,
+    // restaurent1,
+    // profile_4,
+    // profile_5,
+
+
+
+    // audi,
+    // bmw,
+    // rollsRoyce,
+    // benz,
+
+    // car,
+
+    // service,
+    // service1,
+    // service2
+
+  
+}
