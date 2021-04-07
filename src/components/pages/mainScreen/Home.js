@@ -15,10 +15,12 @@ import {
 
 import { COLORS, FONTS, SIZES, icons, images, data } from '../../exports'
 
+import Animated from 'react-native-reanimated';
 
 
 
-const Home = () => {
+
+const Home = ({ navigation, style }) => {
 
     const categoryData = [
         {
@@ -59,20 +61,27 @@ const Home = () => {
     function renderHeader() {
         return (
             <View style={{ padding: SIZES.padding2, marginTop: 50 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Image
-                        source={icons.sidebar}
-                        resizeMode="contain"
-                        style={{ width: 40, height: 40, tintColor: '#ffffff' }}
+                <Animated.View      
+                    style={[{ flexDirection: 'row', justifyContent: 'space-between',  }, style]}>
+                    <TouchableOpacity
+                        onPress={() => { navigation.openDrawer() }}
+                    >
+                        <Image
+                            source={icons.sidebar}
+                            resizeMode="contain"
+                            style={{ width: 40, height: 40, tintColor: '#ffffff' }}
 
-                    />
-                    <Image
-                        source={icons.homebar}
-                        resizeMode="contain"
-                        style={{ width: 30, height: 30, tintColor: '#ffffff' }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={icons.homebar}
+                            resizeMode="contain"
+                            style={{ width: 30, height: 30, tintColor: '#ffffff' }}
 
-                    />
-                </View>
+                        />
+                    </TouchableOpacity>
+                </Animated.View>
                 <View style={{ width: '50%', marginTop: 20 }}>
                     <Text style={{ color: '#ffffff', fontSize: 45, fontWeight: 'bold' }}>Home</Text>
                     <Text style={{ color: '#ffffff', fontSize: 15, fontWeight: 'bold' }}>Where would you like to reserve your table ?</Text>
@@ -247,23 +256,23 @@ const Home = () => {
                                                         position: 'absolute',
                                                         right: 0,
                                                         top: 0,
-                                                        padding:10,
-                                                        marginTop:-25
+                                                        padding: 10,
+                                                        marginTop: -25
                                                     }}>
-                                                        <TouchableOpacity 
-                                                        onPress={()=>{ setModel(false) }}
-                                                        style={{
-                                                            backgroundColor: '#333333E6',
-                                                            width: 35,
-                                                            height: 35,
-                                                            justifyContent: 'center',
-                                                            alignItems: 'center',
-                                                            borderRadius: 10
-                                                        }}>
+                                                        <TouchableOpacity
+                                                            onPress={() => { setModel(false) }}
+                                                            style={{
+                                                                backgroundColor: '#333333E6',
+                                                                width: 35,
+                                                                height: 35,
+                                                                justifyContent: 'center',
+                                                                alignItems: 'center',
+                                                                borderRadius: 10
+                                                            }}>
                                                             <Image
                                                                 source={icons.close}
                                                                 resizeMode="cover"
-                                                                style={{ width: 17, height: 17 , tintColor:'#fff'}}
+                                                                style={{ width: 17, height: 17, tintColor: '#fff' }}
                                                             />
                                                         </TouchableOpacity>
                                                     </View>
@@ -322,7 +331,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: "100%",
-
+        height: "100%",
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',

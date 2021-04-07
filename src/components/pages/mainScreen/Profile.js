@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet,  } from 'react-native'
+import { Block, Text } from "expo-ui-kit";
 
 const Profile = () => {
   return (
-    <View>
+    <Block primary center middle>
       <Text>Profile screen</Text>
-    </View>
+    </Block>
   )
 }
 

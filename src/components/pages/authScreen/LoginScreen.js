@@ -7,8 +7,10 @@ import {
     Image,
     TextInput,
     TouchableOpacity,
-    StatusBar
+    StatusBar, 
 } from 'react-native'
+
+// import {  } from "react-native-elements";
 
 import { COLORS, icons, images, SIZES } from '../../exports'
 
@@ -18,6 +20,8 @@ const LoginScreen = ({navigation}) => {
         return(
             <View style={{ height:130, justifyContent: 'flex-end', alignItems: 'flex-start',padding:SIZES.padding }} >
                 <Text style={{ fontSize: 40, color:COLORS.white, fontWeight:'bold'}}> Sign In</Text>
+
+               
             </View> 
         )
     }
