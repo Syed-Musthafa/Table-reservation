@@ -61,8 +61,8 @@ const Home = ({ navigation, style }) => {
     function renderHeader() {
         return (
             <View style={{ padding: SIZES.padding2, marginTop: 50 }}>
-                <Animated.View      
-                    style={[{ flexDirection: 'row', justifyContent: 'space-between',  }, style]}>
+                <Animated.View
+                    style={[{ flexDirection: 'row', justifyContent: 'space-between', }, style]}>
                     <TouchableOpacity
                         onPress={() => { navigation.openDrawer() }}
                     >
@@ -207,7 +207,9 @@ const Home = ({ navigation, style }) => {
             return (
                 <View
                     style={{ padding: SIZES.padding, }}>
-                    <View style={{
+                    <TouchableOpacity 
+                    onPress={()=> { navigation.navigate("HotelDetails" , { item })}}
+                    style={{
                         backgroundColor: '#fff',
                         width: 160,
                         height: 170,
@@ -244,7 +246,7 @@ const Home = ({ navigation, style }) => {
                                     />
                                     <TouchableOpacity
                                         onPress={() => { setModel(true) }}
-                                        style={{ backgroundColor: '#ab47bc', justifyContent: 'center', alignItems: 'center', borderRadius: 5, width: 55, height: 20 }}>
+                                        style={{ backgroundColor: '-', justifyContent: 'center', alignItems: 'center', borderRadius: 5, width: 55, height: 20 }}>
                                         <Text style={{ fontSize: 8, color: '#fff', marginLeft: 1 }}>Book the Table</Text>
                                         <Modal
                                             transparent={true}
@@ -287,15 +289,17 @@ const Home = ({ navigation, style }) => {
 
                         </View>
 
-                    </View>
+                    </TouchableOpacity>
+                   
                 </View>
+                
 
             )
         }
 
 
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{ flex:1}}>
                 <FlatList
                     data={data}
                     keyExtractor={item => `${item.id}`}
@@ -304,8 +308,10 @@ const Home = ({ navigation, style }) => {
                     // contentContainerStyle= {{ }}
                     renderItem={renderItem}
                 />
+                
             </SafeAreaView>
         )
+
     }
 
     return (

@@ -7,13 +7,20 @@ const plate = require("../assets/images/plate.png");
 const homepage = require("../assets/images/homepage.jpg");
 
 // 
-const restaurent1 = require("../assets/images/restaurent1.png");
+const restaurent1 = require("../assets/images/restaurent1.jpg");
 const restaurent2 = require("../assets/images/restaurent2.jpg");
 const restaurent3 = require("../assets/images/restaurent3.jpg");
 const restaurent4 = require("../assets/images/restaurent4.jpg");
 const restaurent5 = require("../assets/images/restaurent5.jpg");
 const restaurent6 = require("../assets/images/restaurent6.jpg");
 const restaurent7 = require("../assets/images/restaurent7.jpg");
+
+
+const profile_1 = require("../assets/images/profile_1.jpg");
+const profile_2 = require("../assets/images/profile_2.jpg");
+const profile_3 = require("../assets/images/profile_3.jpg");
+const profile_4 = require("../assets/images/profile_4.jpg");
+const profile_5 = require("../assets/images/profile_5.jpg");
 
 
 
@@ -46,11 +53,11 @@ export default {
     restaurent6,
     restaurent7,
 
-    // profile_1,
-    // profile_2,
-    // restaurent1,
-    // profile_4,
-    // profile_5,
+    profile_1,
+    profile_2,
+    profile_3,
+    profile_4,
+    profile_5,
 
 
 

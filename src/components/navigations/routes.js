@@ -14,8 +14,18 @@ import {
   LoginScreen,
   SignUpScreen
 } from "./../pages/authScreen"
+
+
+import {
+  HotelDetails
+} from "./../pages/subScreen"
+
+
+
 import Animated from 'react-native-reanimated';
-// import { styles } from 'expo-ui-kit';
+
+
+
 
 
 
@@ -38,6 +48,7 @@ const Screens = ({navigation , style}) => {
       {/* <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="SignUp" component={SignUpScreen} /> */}
       <Stack.Screen name="Tabs" component={Tabs} />
+      <Stack.Screen name="HotelDetails" component={HotelDetails} />
 
     </Stack.Navigator>
     </Animated.View>

@@ -22,10 +22,13 @@ export const Unstar = require("../assets/icons/star_corner.png");
 export const star = require("../assets/icons/star_filled.png");
 
 export const bookmark = require("../assets/icons/bookmark.png")
+export const bookmark_full = require("../assets/icons/bookmark-full.png");
 
 export const close = require("../assets/icons/close1.png");
-// export const phone = require("../assets/icons/phone.png");
-// export const message = require("../assets/icons/message.png");
+
+
+
+export const logout = require("../assets/icons/logout.png");
 
 // export const office = require("../assets/icons/office.png");
 
@@ -75,8 +78,11 @@ export default {
     star,
 
     bookmark,
+    bookmark_full,
 
-    close
+    close,
+
+    logout
 
     // cars1,
     // cars2,

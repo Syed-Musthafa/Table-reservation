@@ -16,7 +16,7 @@ export default  [
         rating: 4.8,
         categories: [5, 7],
         priceRating: affordable,
-        photo: images.restaurent6,
+        photo: images.restaurent1,
         location: "N2, Nirmala building left annexe,  India"
          
     },
