@@ -8,16 +8,24 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { SIZES } from '../exports';
+
+
+import { SIZES ,COLORS} from '../exports';
 
 
 
 
 export function DrawerContent(props) {
+
+  // const isFocused = useIsFocused();
+ 
     // console.log("progress", props.progress);
     return (
         <DrawerContentScrollView {...props} contentContainerStyle={{ flex:1}}>
         <View>
+
+       
+
         <View style={{ flex:1, padding:SIZES.padding2, alignItems:"center", justifyContent:'center'}}>
             <Text style={{ fontSize:40, fontWeight:'bold'}}>
                 Menu
@@ -61,6 +69,26 @@ export function DrawerContent(props) {
                 labelStyle={{marginLeft: -16}}
                 onPress={() => {
                   props.navigation.navigate('Profile');
+                }}
+              />
+              <DrawerItem
+                icon={({color, size}) => (
+                  <Icon name="contacts" color={color} size={size} />
+                )}
+                label="Contacts"
+                labelStyle={{marginLeft: -16}}
+                onPress={() => {
+                  props.navigation.navigate('Contacts');
+                }}
+              />
+              <DrawerItem
+                icon={({color, size}) => (
+                  <Icon name="email" color={color} size={size} />
+                )}
+                label="Mail List"
+                labelStyle={{marginLeft: -16}}
+                onPress={() => {
+                  props.navigation.navigate('MailList');
                 }}
               />
             </View>  

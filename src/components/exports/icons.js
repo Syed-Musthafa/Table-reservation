@@ -30,28 +30,30 @@ export const close = require("../assets/icons/close1.png");
 
 export const logout = require("../assets/icons/logout.png");
 
-// export const office = require("../assets/icons/office.png");
+export const pencil = require("../assets/icons/pencil.png");
 
 
 
-// export const heartRed = require("../assets/icons/heart_red.png");
-// export const heart = require("../assets/icons/heart_icon.png");
+export const phone = require("../assets/icons/phone.png");
+export const email = require("../assets/icons/email.png");
 
 
-// export const villa = require("../assets/icons/villa.png");
+export const tracking = require("../assets/icons/tracking.png");
 
 
-// export const star = require("../assets/icons/star.png");
+export const language = require("../assets/icons/language.png");
 
 
 
-// export const toilet = require("../assets/icons/toilet3.png");
+export const location1 = require("../assets/icons/location-pin.png");
 
-// export const squrefit = require("../assets/icons/squre1.png");
+export const phone1 = require("../assets/icons/phone1.png");
 
-// export const selected = require("../assets/icons/selected.png");
-// export const unselected = require("../assets/icons/unselected.png");
+export const gender = require("../assets/icons/gender.png");
+export const settings = require("../assets/icons/settings.png");
 
+
+export const camera = require("../assets/icons/camera.png");
 
 export default {
     
@@ -82,7 +84,18 @@ export default {
 
     close,
 
-    logout
+    logout,
+
+    pencil,
+    phone,
+    phone1,
+    email,
+    tracking,
+    language,
+    location1,
+    gender,
+    settings,
+    camera
 
     // cars1,
     // cars2,

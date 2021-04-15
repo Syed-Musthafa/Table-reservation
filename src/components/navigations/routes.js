@@ -4,6 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+
+
 import Tabs from "./Tabs";
 
 import { DrawerContent } from "./Drawer";
@@ -17,7 +19,11 @@ import {
 
 
 import {
-  HotelDetails
+  HotelDetails,
+  Contacts,
+  inviteContact,
+  MailList,
+  inviteMail
 } from "./../pages/subScreen"
 
 
@@ -49,6 +55,10 @@ const Screens = ({navigation , style}) => {
       <Stack.Screen name="SignUp" component={SignUpScreen} /> */}
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="HotelDetails" component={HotelDetails} />
+      <Stack.Screen name="Contacts" component={Contacts} />
+      <Stack.Screen name="inviteContact" component={inviteContact} />
+      <Stack.Screen name="MailList" component={MailList} />
+      <Stack.Screen name="inviteMail" component={inviteMail} />
 
     </Stack.Navigator>
     </Animated.View>
@@ -62,6 +72,8 @@ const Screens = ({navigation , style}) => {
 
 
 export default Routes = () => {
+
+ 
 
 
   const [progress, setProgress] = React.useState(new Animated.Value(0))
@@ -99,6 +111,9 @@ export default Routes = () => {
      return <DrawerContent {...props} />
      }} 
      >
+
+   
+
             <Drawer.Screen name="Screens"  >
             {props => <Screens {...props} style={screensStyles} />}
             </Drawer.Screen>

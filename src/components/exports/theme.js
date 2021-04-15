@@ -12,7 +12,7 @@ export const COLORS = {
     // base colors
     // primary: "#172E55", // dark blue
     primary: "#ab47bc",
-    secondary: "#606060",   // gray
+    secondary: "#00c853",   // gray
 
     tranparent: 'rgba(0,0,0,0)',
 

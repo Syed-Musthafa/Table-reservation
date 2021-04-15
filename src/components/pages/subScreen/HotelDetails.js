@@ -11,8 +11,10 @@ import {
     ScrollView,
     FlatList,
     LogBox,
-    SafeAreaView 
+    SafeAreaView
 } from 'react-native'
+
+import MapView, { Marker } from 'react-native-maps';
 
 
 import { COLORS, FONTS, SIZES, icons, images, data, reviews } from '../../exports'
@@ -48,7 +50,7 @@ const HotelDetails = ({ route, navigation }) => {
                             onPress={() => setDefaultRading(item)}>
                             <Image
                                 source={item <= defaultRading ? icons.star : icons.Unstar}
-                                style={{ width: 25, height: 25, resizeMode: 'contain',  }}
+                                style={{ width: 25, height: 25, resizeMode: 'contain', }}
                             />
                         </TouchableOpacity>
                     )
@@ -63,7 +65,7 @@ const HotelDetails = ({ route, navigation }) => {
 
 
 
-        
+
         return (
             <View style={{ padding: SIZES.padding2, marginTop: 50 }}>
                 <Animated.View
@@ -171,7 +173,7 @@ const HotelDetails = ({ route, navigation }) => {
                             ...styles.shadow
 
                         }}>
-                        <View style={{ borderRadius: 25, alignItems: "center", justifyContent: "center", }} >
+                        <View style={{ borderRadius: 25, alignItems: "center", justifyContent: "center",  }} >
                             <Text style={{ color: viewMode == "overView" ? COLORS.white : COLORS.black, ...FONTS.body5 }}>overView</Text>
                         </View>
                     </TouchableOpacity>
@@ -271,13 +273,23 @@ const HotelDetails = ({ route, navigation }) => {
     function renderOverViewList() {
         return (
             <View>
-                <View style={{ padding:30 }}>
-                    <Text style={{ fontSize:24, color:COLORS.primary}}>Overview</Text>
-                    <Text style={{ marginTop:10}}>Restaurant companies are essentially retailers of prepared foods, 
+                <View style={{ padding: 30, marginTop:-20}}>
+                    <Text style={{ fontSize: 24, color: COLORS.primary }}>Overview</Text>
+                    <Text style={{ marginTop: 10 }}>Restaurant companies are essentially retailers of prepared foods,
                     and their operating performance is influenced by many of the same factors that affect traditional retail stores.
                     </Text>
-                    <Text style={{ marginTop:10}}>it is relatively easy to forgo prepared foods, altogether, in favor of home cooking, which is usually a less expensive option.
+                    <Text style={{ marginTop: 10 }}>it is relatively easy to forgo prepared foods, altogether, in favor of home cooking, which is usually a less expensive option.
                     </Text>
+                    <View style={{ height: 300 , marginTop:10}}>
+                        <MapView style={{ height: 200, borderRadius:50,   }}
+                            initialRegion={{
+                                latitude: 37.78825,
+                                longitude: -122.4324,
+                                latitudeDelta: 0.0922,
+                                longitudeDelta: 0.0421,
+                            }}
+                        ></MapView>
+                    </View>
                 </View>
             </View>
         )
@@ -322,15 +334,35 @@ const HotelDetails = ({ route, navigation }) => {
     // menu
 
     function renderMenuList() {
-        return(
-            <View style={{ padding:20}}>
-                <View style={{ padding:10, marginTop:10, }}>
-                    <Image 
+        return (
+            <View style={{ padding: 20 }}>
+                <View style={{ padding: 10, marginTop: 10, }}>
+                    <Image
                         source={icons.logout}
                         resizeMode="contain"
-                        style={{ width: 25, height:25, tintColor:"#6200ea"  }}
+                        style={{ width: 25, height: 25, tintColor: "#6200ea" }}
                     />
-                    <Text style={{ textDecorationLine:'underline', color:COLORS.primary, marginTop:10}}>Please View this menu then book the table</Text>
+                    <Text style={{ textDecorationLine: 'underline', color: COLORS.primary, marginTop: 10 }}>Please View this menu then book the table</Text>
+                </View>
+            </View>
+        )
+    }
+
+    //reservation
+
+    function renderReservation() {
+        return (
+            <View style={{ flex: 1, marginTop: 50, marginLeft: 50 }}>
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
+                    <Image
+                        source={images.reservation}
+                        resizeMode="stretch"
+                        style={{
+                            width: 300,
+                            height: 300
+
+                        }}
+                    />
                 </View>
             </View>
         )
@@ -339,49 +371,49 @@ const HotelDetails = ({ route, navigation }) => {
     // Reviews
 
     function renderReviewsList() {
- 
+
         const renderItem = ({ item, index }) => {
-            return(
-                <View style={{ justifyContent:'center', alignItems:'center',  padding:10}}>
+            return (
+                <View style={{ justifyContent: 'center', alignItems: 'center', padding: 10 }}>
                     <View style={{
-                         width:"95%",
+                        width: "95%",
                         //  height:100,
-                         backgroundColor:'#fff',
-                         padding:10, 
-                         borderRadius:10,
-                         ...styles.shadow
-                         }}>
-                        <View style={{ flexDirection:'row'}}>
-                            <Image 
-                            source={item.profile}
-                            resizeMode="contain"
-                            style={{ width:50, height:50, borderRadius:25}}
-                             />
-                             <View style={{marginLeft:10}}>
-                                 <Text style={{fontSize:25}}>{item.name}</Text>
-                                 <Text style={{fontSize:10}}>{item.table}</Text>
-                                 <Text style={{fontSize:10}}>{item.location}</Text>
-                             </View>
+                        backgroundColor: '#fff',
+                        padding: 10,
+                        borderRadius: 10,
+                        ...styles.shadow
+                    }}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Image
+                                source={item.profile}
+                                resizeMode="contain"
+                                style={{ width: 50, height: 50, borderRadius: 25 }}
+                            />
+                            <View style={{ marginLeft: 10 }}>
+                                <Text style={{ fontSize: 25 }}>{item.name}</Text>
+                                <Text style={{ fontSize: 10 }}>{item.table}</Text>
+                                <Text style={{ fontSize: 10 }}>{item.location}</Text>
+                            </View>
                         </View>
-                        <View style={{ padding:10}}>
+                        <View style={{ padding: 10 }}>
                             <CustomRatingBar />
-                           
+
                         </View>
-                        <Text style={{ padding:10, fontSize:13}}>{item.reviews}</Text>
+                        <Text style={{ padding: 10, fontSize: 13 }}>{item.reviews}</Text>
                     </View>
                 </View>
             )
         }
 
 
-        return(
+        return (
             <SafeAreaView>
                 <FlatList
-                        data={reviews}
-                        keyExtractor={item => `${item.id}`}
-                        horizontal={false}
-                        renderItem={renderItem}
-                    />
+                    data={reviews}
+                    keyExtractor={item => `${item.id}`}
+                    horizontal={false}
+                    renderItem={renderItem}
+                />
             </SafeAreaView>
         )
     }
@@ -421,9 +453,16 @@ const HotelDetails = ({ route, navigation }) => {
                         </View>
                     }
                     {
+                        viewMode == "reservation" &&
+                        <View >
+                            {renderReservation()}
+                        </View>
+                    }
+                    {
                         viewMode == "reviews" &&
                         <View >
                             {renderReviewsList()}
+
                         </View>
                     }
                 </ScrollView>
@@ -457,6 +496,8 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.1,
         shadowRadius: 3,
-        elevation: 1,
+        elevation: 5
+
+        ,
     }
 })

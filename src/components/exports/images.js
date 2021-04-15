@@ -25,8 +25,10 @@ const profile_5 = require("../assets/images/profile_5.jpg");
 
 
 
-// const audi = require("../assets/images/audi.jpg");
-// const bmw = require("../assets/images/bmw.jpg");
+const sunrise = require("../assets/images/sunrise.jpg");
+const reservation = require("../assets/images/reservation.png");
+
+
 // const rollsRoyce = require("../assets/images/rollsRoyce.jpg");
 // const benz = require("../assets/images/benz.jpg");
 
@@ -58,6 +60,10 @@ export default {
     profile_3,
     profile_4,
     profile_5,
+
+    sunrise,
+
+    reservation,
 
 
 
